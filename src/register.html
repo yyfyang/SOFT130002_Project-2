@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <style type="text/css">
+        body{
+            overflow-x: hidden;
+
+            background-image: url("../img/re.jpg");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            height: 100%;
+            background-color: gray;
+        }
+        section{
+            position: relative;
+            left: 40%;
+            top: 110px;
+        }
+
+    </style>
+</head>
+<body >
+<div>
+    <form   action="../register.php" method="post">
+        <h1 style="position: relative;left: 45%;top: 90px ;font-family:宋体,serif ">
+            注册
+        </h1>
+        <section>
+            <P>
+                请设置用户名：
+                <br>
+                <label>
+                    <input type="text" id="username" name="user" required onkeyup="value=value.replace(/[\W]/g,'');tet()" ><span id="tishi4"></span>
+                </label>
+            </P>
+            <p>
+                请设置密码：
+                <br>
+                <label>
+                    <input type="password" id="password" name="pass" minlength="9" required onkeyup="value=value.replace(/[^\d|a-zA-Z]/g,'');pass()" pattern="^.{8,}">
+                    <span id="tishi3"></span>
+                </label>
+            </p>
+            <p>
+                请确认密码：
+                <br>
+                <label>
+                    <input type="password" id="password2" minlength="9" required onkeyup="validate()" pattern="^.{8,}"><span id="tishi"></span>
+                </label>
+            </p>
+            <p>
+                您的邮箱：
+                <br>
+                <label>
+                    <input required name="email" type="email" >
+                </label>
+            </p>
+            <p>
+                <label>
+                    验证码：7*3+1=
+                    <input required id="number" type="number" onkeyup="test()"><span id="tishi2"></span>
+                </label>
+            </p>
+            <a id="ifSuccess">
+                <input  type="submit" value="提交" name="continue" id="submit">
+            </a>
+        </section>
+    </form>
+    <footer style="position: relative;left: 45%;top: 420px; color: white " >
+        <p>备案号：19302010071</p>
+    </footer>
+</div>
+<script>
+    function validate() {
+        var pwd1 = document.getElementById("password").value;
+        var pwd2 = document.getElementById("password2").value;
+
+        if(pwd1 === pwd2 && pwd1!=="") {
+            document.getElementById("tishi").innerHTML="<font color='green'>两次密码相同</font>";
+            document.getElementById("submit").disabled = false;
+        }
+        else {
+            document.getElementById("tishi").innerHTML="<font color='red'>两次密码不相同</font>";
+            document.getElementById("submit").disabled = true;
+        }
+    }
+    function test() {
+        var n=document.getElementById("number").value;
+        if (n===22){
+            document.getElementById("tishi2").innerHTML="<font color='green'>验证码正确</font>";
+            document.getElementById("submit").disabled = false;
+        }else {
+            document.getElementById("tishi2").innerHTML="<font color='red'>验证码错误</font>";
+            document.getElementById("submit").disabled = true;
+        }
+    }
+    function pass() {
+        var pwd1 = document.getElementById("password").value;
+        if (pwd1.length<8){
+            document.getElementById("tishi3").innerHTML="<font color='red'>弱密码</font>"
+            document.getElementById("submit").disabled = true;
+        }else {
+            document.getElementById("tishi3").innerHTML="<font color='green'></font>"
+            document.getElementById("submit").disabled =false;
+        }
+    }
+    function tet() {
+        var user=document.getElementById("username").value;
+        var b=/^[a-zA-Z0-9\u4e00-\u9fa5\_]+$/;
+        if (!b.test(user)){
+            document.getElementById("tishi4").innerHTML="<font color='red'>用户名非法</font>"
+            document.getElementById("submit").disabled = true;
+        }else {
+            document.getElementById("tishi4").innerHTML="<font color='green'>用户名格式正确</font>"
+            document.getElementById("submit").disabled = false;
+        }
+    }
+</script>
+</body>
+</html>

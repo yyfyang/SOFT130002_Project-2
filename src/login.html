@@ -1,0 +1,45 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+    <title>登录</title>
+    <meta charset="UTF-8">
+    <style>
+        body{
+            background-image: url("../img/background1.jpg");
+            position: absolute;
+            background-repeat:no-repeat;
+            background-size: 1440px 847px;
+        }
+        input[type="button"]
+        {
+            width:60px;
+            position:absolute;
+            top: 392px;
+            left: 690px;
+            font-family: Verdana, Arial,serif;
+        }
+    </style>
+</head>
+<body >
+<header style="font-size:150%;position: relative;top: 230px;left:730px">登录</header>
+<div>
+    <form action="php.php" method="post">
+        <label style="position:absolute;top: 280px;left: 680px" >用户：
+            <input type="text" name="Name"  size="20" required>
+        </label>
+        <label style="position:absolute;top: 325px;left: 680px">密码：
+            <input type="password" name="Password" size="20" required>
+        </label>
+        <a href="register.html">
+            <input type="button" value="注册">
+        </a>
+        <a id="login">
+            <input type="submit" value="登录" style="position: relative;top: 360px;left: 760px;width: 60px">
+        </a>
+    </form>
+    <footer style="position: absolute;left: 650px;top: 720px; color: gray " >
+        <p>联系电话：15002116228<br>备案号：19302010071</p>
+    </footer>
+</div>
+</body>
+</html>
