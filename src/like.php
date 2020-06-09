@@ -138,7 +138,7 @@
                     echo "<li><div class='back1' ><a href='upload.php'>上传</a></div></li>
                 <li><div class='back2'><a href='picture.php'>我的照片</a></div></li>
                 <li><div class='back3'><a href='like.php'>我的收藏</a></div></li>
-                <li ><div class='back4'><a href='login.html'>登出</a></div> </li>";
+                <li ><div class='back4'><a href='loginout.php'>登出</a></div> </li>";
                     echo '<script type="text/javascript">document.getElementById("aa").innerText="个人中心"</script>';
                 }
                 ?>
