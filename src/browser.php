@@ -686,6 +686,7 @@
                          }else{
                              if ($_SESSION['choosetype2']==3){
                                  $hot3=$_SESSION['hot3'];
+                                 $value=45;
                 if ($hot3=='yes'){
                     if ($_GET['page']==1){
                     $l=1;
@@ -805,50 +806,134 @@
         if (!isset($_GET['page'])){
             $_GET['page']=1;
         }
-        if ($_GET['page']==1){
+        if ($value<=9){
             echo '<li><a href="?page=1" class="k"><<</a></li>
+           <li><a href="?page=1" class="kk">1</a></li>
+           <li><a href="?page=1" class="k">>></a></li>';
+        }else{
+            if ($value<=18&&$value>9){
+                if ($_GET['page']==1){
+                    echo '<li><a href="?page=1" class="k"><<</a></li>
+               <li><a href="?page=1" class="kk">1</a></li>
+               <li><a href="?page=2" class="k">2</a></li>
+               <li><a href="?page=2" class="k">>></a></li>';
+                }else{
+                    echo '<li><a href="?page=1" class="k"><<</a></li>
+               <li><a href="?page=1" class="k">1</a></li>
+               <li><a href="?page=2" class="kk">2</a></li>
+               <li><a href="?page=2" class="k">>></a></li>';
+                }
+            }else{
+                if ($value<=27&&$value>18){
+                    if ($_GET['page']==1){
+                        echo '<li><a href="?page=1" class="k"><<</a></li>
+           <li><a href="?page=1" class="kk">1</a></li>
+           <li><a href="?page=2" class="k">2</a></li>
+           <li><a href="?page=3" class="k">3</a></li>
+           <li><a href="?page=2" class="k">>></a></li>';
+                    }else{
+                        if ($_GET['page']==2){
+                            echo '<li><a href="?page=1" class="k"><<</a></li>
+           <li><a href="?page=1" class="k">1</a></li>
+           <li><a href="?page=2" class="kk">2</a></li>
+           <li><a href="?page=3" class="k">3</a></li>
+           <li><a href="?page=3" class="k">>></a></li>';
+                        }else{
+                            if ($_GET['page']==3){
+                                echo '<li><a href="?page=2" class="k"><<</a></li>
+           <li><a href="?page=1" class="k">1</a></li>
+           <li><a href="?page=2" class="k" >2</a></li>
+           <li><a href="?page=3" class="kk">3</a></li>
+           <li><a href="?page=3" class="k">>></a></li>';
+                            }
+                        }
+                    }
+                }else{
+                    if ($value<=36&&$value>27){
+                        if ($_GET['page']==1){
+                            echo '<li><a href="?page=1" class="k"><<</a></li>
+           <li><a href="?page=1" class="kk">1</a></li>
+           <li><a href="?page=2" class="k">2</a></li>
+           <li><a href="?page=3" class="k">3</a></li>
+           <li><a href="?page=4" class="k">4</a></li>
+           <li><a href="?page=2" class="k">>></a></li>';
+                        }else{
+                            if ($_GET['page']==2){
+                                echo '<li><a href="?page=1" class="k"><<</a></li>
+           <li><a href="?page=1" class="k">1</a></li>
+           <li><a href="?page=2" class="kk">2</a></li>
+           <li><a href="?page=3" class="k">3</a></li>
+           <li><a href="?page=4" class="k">4</a></li>
+           <li><a href="?page=3" class="k">>></a></li>';
+                            }else{
+                                if ($_GET['page']==3){
+                                    echo '<li><a href="?page=2" class="k"><<</a></li>
+           <li><a href="?page=1" class="k">1</a></li>
+           <li><a href="?page=2" class="k" >2</a></li>
+           <li><a href="?page=3" class="kk">3</a></li>
+           <li><a href="?page=4" class="k">4</a></li>
+           <li><a href="?page=4" class="k">>></a></li>';
+                                }else{
+                                    if ($_GET['page']==4){
+                                        echo '<li><a href="?page=3" class="k"><<</a></li>
+           <li><a href="?page=1" class="k">1</a></li>
+           <li><a href="?page=2" class="k">2</a></li>
+           <li><a href="?page=3" class="k">3</a></li>
+           <li><a href="?page=4" class="kk">4</a></li>
+           <li><a href="?page=4" class="k">>></a></li>';
+                                    }
+                                }
+                            }
+                        }
+                    }else{
+                        if ($_GET['page']==1){
+                            echo '<li><a href="?page=1" class="k"><<</a></li>
            <li><a href="?page=1" class="kk">1</a></li>
            <li><a href="?page=2" class="k">2</a></li>
            <li><a href="?page=3" class="k">3</a></li>
            <li><a href="?page=4" class="k">4</a></li>
            <li><a href="?page=5" class="k">5</a></li>
            <li><a href="?page=2" class="k">>></a></li>';
-        }else{
-            if ($_GET['page']==2){
-                echo '<li><a href="?page=1" class="k"><<</a></li>
+                        }else{
+                            if ($_GET['page']==2){
+                                echo '<li><a href="?page=1" class="k"><<</a></li>
            <li><a href="?page=1" class="k">1</a></li>
            <li><a href="?page=2" class="kk">2</a></li>
            <li><a href="?page=3" class="k">3</a></li>
            <li><a href="?page=4" class="k">4</a></li>
            <li><a href="?page=5" class="k">5</a></li>
            <li><a href="?page=3" class="k">>></a></li>';
-            }else{
-                if ($_GET['page']==3){
-                    echo '<li><a href="?page=2" class="k"><<</a></li>
+                            }else{
+                                if ($_GET['page']==3){
+                                    echo '<li><a href="?page=2" class="k"><<</a></li>
            <li><a href="?page=1" class="k">1</a></li>
            <li><a href="?page=2" class="k" >2</a></li>
            <li><a href="?page=3" class="kk">3</a></li>
            <li><a href="?page=4" class="k">4</a></li>
            <li><a href="?page=5" class="k">5</a></li>
            <li><a href="?page=4" class="k">>></a></li>';
-                }else{
-                    if ($_GET['page']==4){
-                        echo '<li><a href="?page=3" class="k"><<</a></li>
+                                }else{
+                                    if ($_GET['page']==4){
+                                        echo '<li><a href="?page=3" class="k"><<</a></li>
            <li><a href="?page=1" class="k">1</a></li>
            <li><a href="?page=2" class="k">2</a></li>
            <li><a href="?page=3" class="k">3</a></li>
            <li><a href="?page=4" class="kk">4</a></li>
            <li><a href="?page=5" class="k">5</a></li>
            <li><a href="?page=5" class="k">>></a></li>';
-                    }else{
-                        if ($_GET['page']==5){
-                            echo '<li><a href="?page=4" class="k"><<</a></li>
+                                    }else{
+                                        if ($_GET['page']==5){
+                                            echo '<li><a href="?page=4" class="k"><<</a></li>
            <li><a href="?page=1" class="k">1</a></li>
            <li><a href="?page=2" class="k">2</a></li>
            <li><a href="?page=3" class="k">3</a></li>
            <li><a href="?page=4" class="k">4</a></li>
            <li><a href="?page=5" class="kk">5</a></li>
            <li><a href="?page=5" class="k">>></a></li>';
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
